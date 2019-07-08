@@ -1,0 +1,22 @@
+workflow "Checks & Publish" {
+  on = "push"
+  resolves = ["Publish"]
+}
+
+action "Install" {
+  uses = "actions/npm@master"
+  args = "ci"
+}
+
+action "Lint" {
+  uses = "actions/npm@master"
+  needs = ["Install"]
+  args = "run eslint"
+}
+
+action "Test" {
+  uses = "actions/npm@master"
+  needs = ["Install"]
+  args = "test"
+  secrets = ["CODECOV_TOKEN"]
+}
