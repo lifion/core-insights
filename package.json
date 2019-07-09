@@ -26,13 +26,12 @@
     "develop": "gatsby develop",
     "eslint": "eslint . --ext .js,.json",
     "format": "prettier --write '**/*.{md,js,json}' '!{reports,.cache,public}/**/*.{js,json}'",
-    "jest": "JEST_JUNIT_OUTPUT=./reports/junit/js-test-results.xml jest",
     "lint": "eslint . --ext .js,.json --format junit -o ./reports/junit/js-lint-results.xml",
     "prepare": "check-engines",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "test": "npm run jest -- --ci --runInBand && codecov",
-    "test-watch": "npm run jest -- --watchAll --coverageReporters=html",
+    "test": "jest --ci --runInBand && codecov",
+    "test-watch": "jest --watchAll --coverageReporters=html",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
@@ -48,13 +47,12 @@
     "babel-preset-gatsby": "^0.2.1",
     "check-engines": "^1.5.0",
     "codecov": "^3.5.0",
-    "eslint": "^6.0.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-lifion": "^1.2.4",
     "husky": "^3.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
-    "jest-junit": "^6.4.0",
     "jsdoc-to-markdown": "^5.0.0",
     "lint-staged": "^9.1.0",
     "npm-watch": "^0.6.0",
@@ -81,7 +79,7 @@
     "collectCoverageFrom": [
       "**/*.js"
     ],
-    "coverageDirectory": "../reports/coverage",
+    "coverageDirectory": "../coverage",
     "coverageThreshold": {
       "global": {
         "statements": 0,
@@ -90,10 +88,6 @@
         "lines": 0
       }
     },
-    "reporters": [
-      "default",
-      "jest-junit"
-    ],
     "rootDir": "src",
     "transform": {
       "^.+\\.jsx?$": "../jest-preprocess.js"

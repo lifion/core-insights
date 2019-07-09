@@ -1,6 +1,6 @@
+.cache
+/coverage
 /package-lock.json
-/reports
 /templates
 /tests
-.cache/
 public

@@ -1,5 +1,5 @@
 .DS_Store
+.cache
+/coverage
 /node_modules
-/reports
-.cache/
 public
