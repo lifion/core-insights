@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://stash.es.ad.adp.com/src/core/lifion-insights.git"
+    "url": "https://github.com/lifion/lifion-insights.git"
   },
   "bugs": {
     "url": "https://github.com/lifion/lifion-insights/issues"
@@ -86,7 +86,7 @@
   },
   "@lifion/core-commons": {
     "template": "public",
-    "updated": "2019-08-26T23:45:32.268Z",
+    "updated": "2019-08-27T00:10:57.172Z",
     "version": "2.3.3"
   }
 }
