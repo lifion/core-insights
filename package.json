@@ -39,18 +39,20 @@
     "develop": "gatsby develop",
     "eslint": "eslint . --ext .js,.json --ignore-pattern='!.*.*'",
     "format": "prettier --write '**/*.{md,js,json}' '!{coverage,.cache,public}/**/*.{js,json}'",
-    "prepare": "check-engines",
+    "prepare": "npm run snyk-protect && check-engines",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "test": "jest -c ./.jest.json",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "snyk-protect": "snyk protect"
   },
   "dependencies": {
     "gatsby": "^2.19.45",
     "gatsby-plugin-react-helmet": "^3.1.24",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "auto-changelog": "^1.16.2",
@@ -87,5 +89,6 @@
     "template": "public",
     "updated": "2019-11-11T21:21:36.072Z",
     "version": "2.3.4"
-  }
+  },
+  "snyk": true
 }
